@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='base30-korean',
-    version='0.0.1',
+    version='0.0.2',
     py_modules=['base30_korean'],
     author='Joseph Kim',
     author_email='iz4blue@gmail.com',
