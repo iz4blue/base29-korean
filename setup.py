@@ -5,10 +5,11 @@ from setuptools import setup
 
 setup(
     name='base30-korean',
-    version='0.1',
-    description='crockford base32를 한국어 실정에 맞게 변형한 base30',
+    version='0.0.1',
+    py_modules=['base30_korean'],
     author='Joseph Kim',
     author_email='iz4blue@gmail.com',
+    description='crockford base32를 한국어 실정에 맞게 변형한 base30',
     url='https://github.com/iz4blue/base30-korean',
     license='BSD',
     classifiers=[
