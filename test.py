@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import base30_korean as target
+import base29_korean as target
 
 
 class EncodeTests(unittest.TestCase):
