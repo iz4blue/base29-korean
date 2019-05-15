@@ -10,17 +10,17 @@ class EncodeTests(unittest.TestCase):
         self.assertEqual(target.encode(0), '0')
         self.assertEqual(target.encode(1), '1')
         self.assertEqual(target.encode(9), 'A')
-        self.assertEqual(target.encode(29), 'Z')
+        self.assertEqual(target.encode(28), 'Z')
 
     def test_2자리수_결과를_encode_해본다(self):
-        self.assertEqual(target.encode(30), '10')
-        self.assertEqual(target.encode(30 + 1), '11')
-        self.assertEqual(target.encode(30*14 + 14), 'GG')
+        self.assertEqual(target.encode(29), '10')
+        self.assertEqual(target.encode(29 + 1), '11')
+        self.assertEqual(target.encode(29*14 + 14), 'GG')
 
 
     def test_3자리수_결과를_encode_해본다(self):
-        self.assertEqual(target.encode(30*30), '100')
-        self.assertEqual(target.encode(30*30*14 + 30*14 + 14), 'GGG')
+        self.assertEqual(target.encode(29*29), '100')
+        self.assertEqual(target.encode(29*29*14 + 29*14 + 14), 'GGG')
 
 
 class DecodeTests(unittest.TestCase):
@@ -29,16 +29,16 @@ class DecodeTests(unittest.TestCase):
         self.assertEqual(target.decode('1'), 1)
         self.assertEqual(target.decode('A'), 9)
         self.assertEqual(target.decode('B'), 10)
-        self.assertEqual(target.decode('Z'), 29)
+        self.assertEqual(target.decode('Z'), 29 - 1)
 
     def test_2자리수를_decode_해본다(self):
-        self.assertEqual(target.decode('10'), 30)
-        self.assertEqual(target.decode('11'), 31)
-        self.assertEqual(target.decode('GG'), 30*14 + 14)
+        self.assertEqual(target.decode('10'), 29)
+        self.assertEqual(target.decode('11'), 29 + 1)
+        self.assertEqual(target.decode('GG'), 29*14 + 14)
 
     def test_3자리수를_decode_해본다(self):
-        self.assertEqual(target.decode('100'), 30*30)
-        self.assertEqual(target.decode('GGG'), 30*30*14 + 30*14 + 14)
+        self.assertEqual(target.decode('100'), 29*29)
+        self.assertEqual(target.decode('GGG'), 29*29*14 + 29*14 + 14)
 
     def test_5EeIiLlOoUu이_022111100VV으로_인식되는지(self):
         self.assertEqual(target.decode('5EeIiLlOoUu'), target.decode('022111100VV'))
