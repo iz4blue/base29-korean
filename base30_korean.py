@@ -3,8 +3,9 @@
 # http://www.crockford.com/wrmg/base32.html 의 base32 를 기준으로
 # 한국어의 발음상 E 와 2 가 같은 것을 고려,
 # 한국어의 발음상 5 와 O 가 같은 것을 고려,
-# 읽고 쓰기 편한 것을 목적으로 u 와 v 을 같은 문자로 취급
-symbols = '012346789ABCDFGHJKMNPQRSTVWXYZ'
+# 읽고 쓰기 편한 것을 목적으로 u 와 v 을 같은 문자로 취급,
+# 소문자 q 와 9 가 같을 수 있는 것을 고려,
+symbols = '012346789ABCDFGHJKMNPRSTVWXYZ'
 
 
 def encode(number):
