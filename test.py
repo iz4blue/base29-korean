@@ -55,5 +55,9 @@ class DecodeTests(unittest.TestCase):
         self.assertEqual(target.decode('E'), 2)
         self.assertEqual(target.decode('e'), 2)
 
+    def test_Qq도_9로_인식되는지(self):
+        self.assertEqual(target.decode('Q'), target.decode('9'))
+        self.assertEqual(target.decode('q'), target.decode('9'))
+
 if __name__ == '__main__':
     unittest.main()
